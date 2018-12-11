@@ -19,10 +19,10 @@ exports.onNavigatingTo = function(args) {
     }
   });
 
-  // handle value change
+  // handle value change of observable
   context.project.priority.on(observableModule.Observable.propertyChangeEvent, (propertyChangeData) => {
     if (propertyChangeData.propertyName === "value") {
-      console.log("Value of UI slider changed");
+      console.log("Value of observable changed");
       context.project.priority.set("label", priorities[propertyChangeData.value]);
     }
   });
